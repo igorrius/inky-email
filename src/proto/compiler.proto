@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+// see all options in google/protobuf/descriptor.proto
+option java_multiple_files = true;
+option optimize_for = SPEED;
+
+service EmailCompiler {
+    rpc Compile (EmailCompilerRequest) returns (EmailCompilerResponse);
+}
+
+message EmailCompilerRequest {
+    string sourceTemplate = 1;
+}
+
+message EmailCompilerResponse {
+    string compiledTemplate = 1;
+}
